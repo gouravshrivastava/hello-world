@@ -1,0 +1,27 @@
+<template>
+    <!-- question 1 -->
+    
+    <div class="container">
+        <legend>Select the Source/Target for your integration</legend>
+        <lightning-radio-group data-id="b1" name="radioGroup1"
+                          options={options1}
+                          value={a1}
+                          type="button" onchange={answerChanged} class="options"></lightning-radio-group>
+                          <br/>
+        <legend>Is Integration going to be Synchronised ?</legend>
+        <div class="radioContainer">
+        <lightning-radio-group data-id="b2" name="radioGroup2"
+                          options={options2}
+                          value={a2}
+                          type="button" onchange={answerChanged} class="options"></lightning-radio-group>
+                          <br/>
+        </div>
+        <legend>What type of integration?</legend>
+        <lightning-radio-group data-id="b3" name="radioGroup3"
+                          options={options3}
+                          value={a3}
+                          type="button" onchange={answerChanged} class="options"></lightning-radio-group>
+                          <br/>
+        <button class="button" onclick={handleResetClick}>Reset</button>
+    </div>
+</template>

@@ -1,0 +1,23 @@
+<template>
+  <p class="countRecords">Video Count : {countRecords}</p>
+  <div class="slds-scrollable list">
+  <div class="slds-grid slds-wrap">
+
+  
+  
+  
+  <template for:each={metaDataRecords} for:item="metaDataRecord">
+      
+      <div data-id ={metaDataRecord.Id} key={metaDataRecord.Id}  data-item={metaDataRecord} class="slds-col slds-size_1-of-1" onclick= {handleOnclick}>
+          <lightning-card class="video-tile">
+          <div class="reccomendation">
+              <img alt="thumbnail" src={metaDataRecord.ThumbnailURL__c}/>
+              <div class="title" >{metaDataRecord.Title__c}</div>
+            </div>
+          </lightning-card>
+      </div>
+  </template>
+
+</div>
+</div>
+</template>

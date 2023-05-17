@@ -1,0 +1,147 @@
+<template>
+    <div class="container">
+        <div id="Header"
+            style="display:flex; justify-content:center;font-size:1.3rem;font-weight:500;color:rgb(68, 68, 68);">
+            <lightning-icon icon-name="standard:logging"></lightning-icon>
+            <p style="margin-left: 5px;">Fetch Data From Pdf</p>
+        </div>
+
+
+        <div class={divColor}>
+            <!-- welcomeScreen -->
+            <template if:true={firstScreen}>
+                <div id="FirstScreen" class="firstScreen">
+                    <hr style="margin-top:10px;margin-bottom:10px;" />
+                    <p style="font-size:1.15rem;font-weight:500;">Upload data From PDF to Salesforce Objects</p><br />
+                    <p>This component will help you to upload data directly from PDF to any Salesforce Object.</p>
+                    <p>All you need to do is follow a set of steps.</p><br />
+                    <br />
+                    <p>To move forward press Get Started.</p>
+                    <br /><br />
+                    <lightning-button data-id="1" variant="success" label="Get Started"
+                        onclick={screenChange}></lightning-button>
+
+                </div>
+            </template>
+
+
+            <!-- Step 1 Screen -->
+            <template if:true={secondScreen}>
+                <div id="SecondScreen">
+                    <hr style="margin-top:10px;margin-bottom:10px;" />
+                    <div style="text-align:center;">
+                        <p style="font-size:1.15rem;font-weight:500;">Step 1- Select the type of Pdf</p>
+                    </div>
+                    <br />
+                    <div style="margin-bottom:20px;">
+                        <lightning-radio-group name="radioGroup" label="Choose PDF Type : " options={options}
+                            value={value} onchange={assignValue}></lightning-radio-group>
+                    </div>
+                    <div style="display:flex;justify-content:end;">
+                        <lightning-button data-id="2" variant="brand" label="Next"
+                            onclick={screenChange}></lightning-button>
+                        <lightning-button data-id="-1" label="Back" onclick={screenChange}
+                            style="margin-left:10px;"></lightning-button>
+                    </div>
+
+                </div>
+            </template>
+
+
+            <!-- Step 2 Screen : For Option 1 -->
+            <template if:true={thirdScreen}>
+                <template if:true={showStartButton}>
+                    <div style="display:grid;place-items:center;padding:80px;">
+                        <p style="font-size:1rem;font-weight:500;">{finalMessage}</p>
+                        <br />
+                        <lightning-button name="start button" label="Home" variant="brand"
+                            onclick={homePage}></lightning-button>
+                    </div>
+                </template>
+                <template if:true={withMatchingHeaders}>
+                    <hr style="margin-top:10px;margin-bottom:10px;" />
+
+                    <div style="text-align:center;">
+                        <p style="font-size:1.15rem;font-weight:500;">Step 2 - Select Object and Upload PDF</p>
+                    </div>
+                    <br />
+                    <div id="ThirdScreen">
+
+
+
+                        <lightning-radio-group name="radioGroup" label="Select Operation" options={optionInsertUpdate}
+                            value={valueInsertUpdate} type="radio" onchange={handleOperationChange}
+                            required></lightning-radio-group>
+                        <template if:true={showMessage}>
+                            <p><span style="color:red;">**</span>Please make sure your table contains ID column else new
+                                records would be created.</p>
+                        </template>
+                        <br />
+                        <span style="color:red;">*</span><span style="font-weight:500;">Select Object</span>
+                        <c-searchable-Object-Dropdown options={TypeOptions}
+                            onvalueselected={handleObjectSelect}></c-searchable-Object-Dropdown>
+                        <!-- <br/>
+                    <lightning-combobox name="objects" label="Select Object" value={object} placeholder="Select Object"
+                        options={TypeOptions} onchange={handleObjectSelect} required>
+                    </lightning-combobox> -->
+                        <template if:true={showFrame}>
+                            <div class="vfPage">
+                                <iframe style="border:0px;" src={vfUrl} width="100%" height="50px"></iframe>
+                            </div>
+
+
+                        </template>
+                        <br />
+                        <template if:true={receivedMessage}>
+                            <div class="slds-box">
+                                <div style="display:flex;justify-content:end;margin-bottom:5px;"><lightning-button
+                                        name="button" label="Save Data" onclick={saveDetails}
+                                        variant="brand"></lightning-button></div>
+                                <table class="table">
+                                    <tr>
+                                        <template for:each={columns} for:item='heading'>
+                                            <th key={heading}>{heading}</th>
+                                        </template>
+                                    </tr>
+                                    <template for:each={values} for:item='valuelist'>
+                                        <tr key={valuelist}>
+                                            <template for:each={valuelist} for:item='value'>
+                                                <td key={value}>{value}</td>
+                                            </template>
+                                        </tr>
+                                    </template>
+                                </table>
+
+                            </div>
+
+                        </template>
+
+
+
+                    </div>
+                </template>
+                <template if:true={withNoMatchingHeaders}>
+
+                    <c-pdf-to-text-diff-headers onprogressupdate={updateProgress}></c-pdf-to-text-diff-headers>
+
+                </template>
+                <template if:true={showBack}>
+                    <div style="display:flex;justify-content:end;margin-top:5px;">
+                        <lightning-button data-id="-2" label="Back" onclick={screenChange}
+                            style="margin-left:10px;"></lightning-button>
+                    </div>
+                </template>
+            </template>
+
+
+
+
+        </div>
+        <hr style="margin-top:10px;margin-bottom:10px;" />
+        <div class="progressBar">
+
+            <p style="text-align: end;">{progress}% Complete</p>
+            <lightning-progress-bar value={progress} variant="circular"></lightning-progress-bar>
+        </div>
+    </div>
+</template>

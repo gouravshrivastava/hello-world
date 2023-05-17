@@ -1,0 +1,76 @@
+.no-solution-height {
+    height: 3rem;
+  }
+.container
+{
+  border-radius: 10px;
+  margin-left: 0px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  background-image: linear-gradient(rgb(224, 242, 255),white);
+  max-width: 100%;
+}
+.container:hover
+{
+    background-image: linear-gradient( rgb(188, 227, 255),white);
+    transition-duration: 0.5s;
+}
+.headline
+{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: rgb(3,45,96);
+}
+.align
+{
+  text-align: left;
+}
+.justify{
+  margin-top: 20px;
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+ }
+
+ .button-24 {
+  background: rgb(3,45,96);
+  border: 1px solid rgb(3,45,96);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  outline: 0;
+  padding: 5px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: rgb(3,45,96);
+}
+
+.button-24:active {
+  opacity: .5;
+}
+
+.buttonContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

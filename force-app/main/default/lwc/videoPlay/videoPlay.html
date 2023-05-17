@@ -1,0 +1,11 @@
+<template>
+    <div style="position:relative; display:block; width: 100%; padding-left:10px;padding-top: 13px">
+        <template if:false={videolink}>
+            <p class="displaymsg">Please Select a Video to Play</p>
+        </template>
+        <template if:true={videolink}>
+            <iframe width="853" height="450" src={videolink} title={videotitle} frameborder="0" allow="accelerometer;  clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <!-- <iframe src= {veventdata.VideoLink__c} ></iframe> -->
+        </template>
+    </div>
+</template>

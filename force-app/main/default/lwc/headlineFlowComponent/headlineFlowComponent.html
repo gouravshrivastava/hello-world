@@ -1,0 +1,16 @@
+<template>
+    <div class="container ">
+        <p class="heading">Find Your Best Possible Integration Solution</p>
+        <p class="headline">Please answer the below questions to find the best possible integration pattern for your
+            requirement.</p>
+        <!-- <div class="wrapper"> -->
+            <div class="questions">
+                <c-flow-lwc-component class="flow" onresultevent={handleResultUpdate}></c-flow-lwc-component>
+            </div>
+            <div class="result">
+                <c-flow-result-component result={result}></c-flow-result-component>
+            </div>
+        
+        <!-- </div> -->
+    </div>
+</template>

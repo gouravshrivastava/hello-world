@@ -1,0 +1,33 @@
+.no-solution-height {
+    height: 3rem;
+  }
+
+.container
+{
+  border-radius: 10px;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  background-image: linear-gradient(rgb(224, 242, 255),white);
+}
+.container:hover
+{
+    background-image: linear-gradient(rgb(188, 227, 255),white);
+    transition-duration: 0.5s;
+}
+.headline
+{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.75rem;
+  color: rgb(3,45,96);
+}
+.align
+{
+  text-align: left;
+}
+lightning-formatted-rich-text
+{
+  font-size: 20px;
+}

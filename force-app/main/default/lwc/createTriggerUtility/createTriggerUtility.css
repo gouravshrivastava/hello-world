@@ -1,0 +1,4 @@
+.THIS .slds-dueling-list__column_responsive {
+    flex: 0 1 var(--lwc-sizeSmall,15rem) !important;
+    min-width: 35rem;
+    }

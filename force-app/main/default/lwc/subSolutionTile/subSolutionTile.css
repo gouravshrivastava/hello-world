@@ -1,0 +1,113 @@
+.no-solution-height {
+  height: 3rem;
+}
+
+.container
+{
+border-radius: 10px;
+max-width: 100%;
+margin-left: 0px;
+margin-top: 20px;
+padding-left: 15px;
+padding-right: 15px;
+padding-bottom: 15px;
+background-image: linear-gradient(white,rgb(224, 242, 255));
+}
+.container:hover
+{
+    background-image: linear-gradient(white, rgb(188, 227, 255));
+    transition-duration: 0.5s;
+}
+.headline
+{
+  display:flex;
+  justify-content: center;
+  align-items: center; 
+font-weight: bold;
+font-size: 1.75rem;
+color: rgb(3,45,96);
+}
+
+.button-24 {
+  background: rgb(3,45,96);
+  border: 1px solid rgb(3,45,96);
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  outline: 0;
+  padding: 5px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: rgb(3,45,96);
+}
+
+.button-24:active {
+  opacity: .5;
+}
+.buttonSize{
+max-height:100px;
+}
+table {
+font-family: Verdana;
+font-size: 14px;
+border:1px;
+border-color: #333;
+border-style: solid;
+margin-left: auto;
+margin-right: auto;
+margin-top: 10px;
+}
+
+td, th {
+padding: 10px;
+text-align: left;
+margin: 0;
+}
+
+tbody tr:nth-child(2n){
+background-color: rgb(224, 242, 255);
+}
+
+th {
+background-color: #333;
+color: white;
+max-width: 100px;
+}
+.headingCol
+{
+position: sticky;
+top:0;
+}
+footer{
+margin-top: 10px;
+}
+
+.radiogroupdiv
+{
+  text-align: left;
+  font-weight: bold;
+}
+.radiogroup
+{
+  /* --sds-c-radio-color-border-checked: rgb(1, 32, 71);*/
+  --sds-c-radio-color-border: rgb(48, 48, 48);
+
+  font-size: 30px;
+}

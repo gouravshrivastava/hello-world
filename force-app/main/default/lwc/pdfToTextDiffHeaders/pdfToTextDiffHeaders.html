@@ -1,0 +1,139 @@
+<template>
+    <div class={divColor}>
+    <template if:true={showStartButton}>
+        <div style="display:grid;place-items:center;padding:80px;">
+            <p style="font-size:1rem;font-weight:500;">{finalMessage}</p>
+            <br />
+            <lightning-button name="start button" label="Home" variant="brand" onclick={homePage}></lightning-button>
+        </div>
+    </template>
+    <template if:false={showStartButton}>
+
+        <hr style="margin-top:10px;margin-bottom:10px;" />
+        <div style="text-align:center;">
+            <p style="font-size:1.15rem;font-weight:500;">Step 2 - Select Object and Upload PDF</p>
+        </div>
+        <br />
+
+        <template if:false={showStartButton}>
+            <div>
+
+
+                <lightning-radio-group name="radioGroup" label="Select Operation" options={optionInsertUpdate}
+                    value={valueInsertUpdate} type="radio" onchange={handleOperationChange}
+                    required></lightning-radio-group>
+                <template if:true={showMessage}>
+                    <p><span style="color:red;">**</span>Please make sure your table contains ID column else new records would be created.</p>
+                </template>
+                <br />
+
+                <span style="color:red;">*</span><span style="font-weight:500;">Select Object</span>
+                <c-searchable-Object-Dropdown options={TypeOptions} onvalueselected={handleObjectSelect}></c-searchable-Object-Dropdown>
+                <br />
+                <template if:true={showButton}>
+
+                    <lightning-button name="button" label="Next Step : Field Mapping" variant="brand"
+                        onclick={openModal}></lightning-button>
+
+
+
+                </template>
+                <template if:true={isModalOpen}>
+                    <!-- Modal/Popup Box LWC starts here -->
+                    <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                        aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open ">
+                        <div class="slds-modal__container modal_large">
+                            <!-- Modal/Popup Box LWC header here -->
+                            <header class="slds-modal__header">
+                                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                    title="Close" onclick={closeModal}>
+                                    <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse"
+                                        size="small"></lightning-icon>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Upload Pdf and
+                                    Map
+                                    the Fields</h2>
+                            </header>
+                            <!-- Modal/Popup Box LWC body starts here -->
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                <template if:true={showFrame}>
+                                    <div class="vfPage">
+                                        <iframe style="border:0px;" src={vfUrl} width="100%" height="50px"></iframe>
+                                    </div>
+                                    <hr />
+                                </template>
+
+
+                                <template if:true={receivedMessage}>
+                                    <template if:false={showTable}>
+                                        <p style="font-size:1.1rem;font-weight:500;">Map the Fields</p><br />
+
+                                        <table class="table">
+                                            <tr>
+                                                <th>Fields in Pdf</th>
+                                                <th>Select Corressponding SObject Field</th>
+                                            </tr>
+                                            <template for:each={columns} for:item="column">
+                                                <tr key={column}>
+                                                    <td><b>{column}</b></td>
+                                                    <td>
+                                                        <lightning-combobox name="fields" data-id={column}
+                                                            options={fields} label="Required" value={selectedField}
+                                                            onchange={handleFieldChange} required></lightning-combobox>
+                                                    </td>
+                                                </tr>
+                                            </template>
+
+                                        </table>
+                                        <br />
+                                        <lightning-button name="map" label="Continue" variant="brand"
+                                            onclick={submitDetails}></lightning-button>
+                                    </template>
+
+                                    <template if:true={showTable}>
+                                        <div style="text-align:center;font-size:1.15rem;font-weight:500;">
+                                            <p>Extracted Data</p>
+                                        </div>
+                                        <br />
+                                        <div class="slds-box">
+                                            <div style="display:flex;justify-content:end;margin-bottom:5px;">
+                                                <lightning-button name="button" label="Save Data" onclick={saveDetails}
+                                                    variant="brand"></lightning-button>
+                                            </div>
+                                            <table class="table">
+                                                <tr>
+                                                    <template for:each={columns} for:item='heading'>
+                                                        <th key={heading}>{heading}</th>
+                                                    </template>
+                                                </tr>
+                                                <template for:each={values} for:item='valuelist'>
+                                                    <tr key={valuelist}>
+                                                        <template for:each={valuelist} for:item='value'>
+                                                            <td key={value}>{value}</td>
+                                                        </template>
+                                                    </tr>
+                                                </template>
+                                            </table>
+
+                                        </div>
+                                    </template>
+
+                                </template>
+
+                            </div>
+                            <!-- Modal/Popup Box LWC footer starts here -->
+                            <footer class="slds-modal__footer">
+                                <button class="slds-button slds-button_neutral" onclick={closeModal}
+                                    title="Cancel">Cancel</button>
+
+                            </footer>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </template>
+            </div>
+        </template>
+    </template>
+</div>
+</template>

@@ -1,0 +1,179 @@
+.sidenav
+{
+    position:sticky;
+    position: -webkit-sticky;
+    top:60px;
+    z-index:1;
+    height: 100vh;
+    width:17%;
+    left: 0;
+    background-image: linear-gradient(to right,white, rgb(224, 242, 255));
+    overflow-x: hidden;
+    padding-top: 5px;
+    border-radius: 10px;
+    transition: 0.5s;
+    content-visibility: auto;
+    
+}
+.sidenav:hover
+{
+  border-right:2px solid rgb(170, 170, 170);
+}
+.sidenavMinimized
+{
+  position:sticky;
+  position: -webkit-sticky;
+  top:60px;
+  z-index:1;
+  height: 100vh;
+  width:0%;
+  left: 0;
+  /* background-image: linear-gradient(to right,white, rgb(224, 242, 255)); */
+  background-color: rgb(148, 148, 148);
+  opacity:0;
+  overflow-x: hidden;
+  padding-top: 5px;
+  border-radius: 10px;
+  transition: 0.5s;
+  content-visibility: hidden;
+}
+.sidenav a {
+    padding: 6px 16px 10px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #5a5a5a;
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+  
+a:hover {
+    color: #0a0a0a;
+    transform: scale(1.1);
+    /* background-color: rgb(188, 227, 255); */
+    font-weight: 700;
+  }
+
+  /* rgb(141, 214, 236) */
+
+  .main {
+    /* margin-left: 200px; Same as the width of the sidenav */
+    /* font-size: 28px; Increased text to enable scrolling */
+    padding: 0px 10px;
+    max-width: 84%;
+    transition-duration: 0.3s;
+  }
+
+  .mainExpanded{
+    padding: 0px 10px;
+    width:98%;
+    transition-duration: 0.3s;
+  }
+  
+  /* @media screen and (max-height>=360px) {
+    .sidenav {width:15vw;}
+    .main {width:80vw;}
+  } */
+  
+  .wrapper
+  {
+    display: flex;
+  }
+
+  .heading
+  {
+    color: rgb(3,45,96);
+    font-size: 2.5rem;
+    padding-bottom: 10px;
+    font-weight: 900;
+  }
+  .sub-heading
+  {
+    font-size: 1rem;
+    padding-bottom: 20px;
+  }
+  .menuHeading
+  {
+    padding: 6px 16px 10px 16px;
+    color: rgb(3,45,96);
+    font-size: 2rem;
+    font-weight: 900;
+    border-bottom: 2px solid rgb(170, 170, 170);;
+
+  }
+  .header
+  {
+    text-align: left;
+  }
+
+  .menuItem
+  {
+    border-bottom: 1px solid rgb(150, 149, 149);
+    margin-left:8px;
+    margin-right:8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .close
+  {
+    margin-left:60px;
+    cursor:pointer;
+    transition-duration: 0.3s;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+  }
+  .close:hover{
+    background-color: rgb(3,45,96);
+    color: aliceblue;
+    border-radius: 10px;
+  }
+  .expandarrow
+  {
+    color: rgb(3,45,96);
+    font-size: 1.8rem;
+    font-weight: 900;
+    cursor:pointer;
+    position: sticky;
+    position: -webkit-sticky;
+    top:60px;
+    z-index: 3;
+    transition-duration: 0.3s;
+    padding-left: 2px;
+    padding-right: 2px;
+    background-color: rgb(148, 148, 148);
+    border-radius: 5px;
+  }
+  .expandarrow:hover
+  {
+    background-color: rgb(3,45,96);
+    color:rgb(148, 148, 148);
+    border-radius: 15px;
+  }
+  .expandarrow .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+   opacity: 0.8;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  .expandarrow:hover .tooltiptext {
+    visibility: visible;
+    font-size: 0.7rem;
+  }
+  .expandarrow .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+  }

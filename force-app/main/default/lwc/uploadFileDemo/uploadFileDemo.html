@@ -1,0 +1,12 @@
+<template>
+    <div class="container">
+    <lightning-file-upload
+        label="Attach PDF File"
+        name="fileUploader"
+        accept={acceptedFormats}
+        record-id={myRecordId}
+        onuploadfinished={handleUploadFinished}
+    >
+    </lightning-file-upload>
+</div>
+</template>

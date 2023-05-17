@@ -1,0 +1,64 @@
+.vfPage
+{
+    border: 1px dashed rgb(160, 160, 160);
+    margin-top:10px;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+.modal_size{
+    max-width: 70rem !important;
+     width:70% !important;
+     height:90% !important;
+} 
+
+.Screen
+{
+    text-align: center;
+}
+
+.table
+{
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+.table td, .table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #235dff;
+    color: white;
+  }
+
+  .modal_large{
+    max-width: 80rem !important;
+    width: 80% !important;
+  }
+
+  .successClass
+  {
+    background-color: rgb(199, 252, 199);
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+  .errorClass
+  {
+    background-color: rgb(255, 205, 205);
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+  .default
+  {
+    background-color: white;
+  }

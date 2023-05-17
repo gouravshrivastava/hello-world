@@ -1,0 +1,37 @@
+<aura:component implements="forceCommunity:layout" access="global">
+    
+    <aura:attribute name="addInfo1" type="Aura.Component[]"/>
+    <aura:attribute name="addInfo2" type="Aura.Component[]"/>
+    <aura:attribute name="addInfo3" type="Aura.Component[]"/>
+    <aura:attribute name="addInfo4" type="Aura.Component[]"/>
+    <aura:attribute name="container5" type="Aura.Component[]"/>
+    <aura:attribute name="flowContainer" type="Aura.Component[]"/>
+    <aura:attribute name="resultContainer" type="Aura.Component[]"/>
+    <aura:attribute name="DisplayContainer2" type="Aura.Component[]"/>
+    <aura:attribute name="DisplayContainer3" type="Aura.Component[]"/>
+    <aura:attribute name="solutionContainer" type="Aura.Component[]"/>
+    <aura:attribute name="imageContainer" type="Aura.Component[]"/>
+    <aura:attribute name="prerequisitesContainer" type="Aura.Component[]"/>
+    <aura:attribute name="subsolutionContainer" type="Aura.Component[]"/>
+    <aura:attribute name="references" type="Aura.Component[]"/>
+    
+	<div class=" slds-grid slds-wrap slds-p-left_large slds-p-right_large outer">
+        
+        <div class="slds-size_3-of-3">
+        <div class="slds-text-align_center slds-m-top_x-large">{!v.container5}</div>
+        </div>
+        <div class="slds-size_3-of-3">
+        <div class="slds-text-align_center">{!v.solutionContainer}</div>
+        </div>
+        
+        <div class="slds-size_3-of-3">
+        <div class="slds-text-align_center">{!v.subsolutionContainer}</div>
+        </div>
+        <div class="slds-size_3-of-3">
+        <div class="slds-text-align_center">{!v.prerequisitesContainer}</div>
+        </div>
+        <div class="slds-size_3-of-3">
+        <div class="slds-text-align_center slds-var-m-top_medium">{!v.references}</div>
+        </div>
+    </div>
+</aura:component>

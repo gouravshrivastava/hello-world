@@ -1,0 +1,42 @@
+<template>
+    <div class="container">
+        <div class="header" id="top">
+            <div class="heading">Salesforce Integration Framework</div>
+            <div class="sub-heading">When you implement Salesforce, you frequently need to integrate it with other applications. Although each integration scenario is unique, there are common requirements and issues that developers must resolve.
+            <br/>Salesforce Integration Framework is a interactive platform that acts as a framework
+                / informational source for the people to understand the core concepts of Salesforce Integration and
+                Integration Design Practices.</div>
+        </div>
+        <div class="wrapper">
+           
+            <div class="sidenav slds-scrollable" data-id="side">
+                <!-- <div style="border-bottom: 2px solid rgb(150, 149, 149);margin-left:8px;margin-right:8px;"> -->
+                    <div class="menuHeading" onclick={minimizeSidebar}>Menu<span class="close" onclick={minimizeSidebar}>&#8676;</span></div>
+                <!-- </div> -->
+
+                <br/>
+                <a onclick={navigateToPage} data-id="what">What Is Integration</a>
+                <a onclick={navigateToPage} data-id="capabilities">Integration Capabilities</a>
+                <a onclick={navigateToPage} data-id="patterns">Integration Design Patterns</a>
+                <a onclick={navigateToPage} data-id="case">Some Use Cases</a>
+                <a href="#solution">Detail about Solution</a>
+                <a href="#approaches">Approaches To Follow</a>
+                <a href="#limitations">Limitations, Tools and Pre-Requisites</a>
+                <a href="#video">Video References</a>
+                <a href="#top">
+                    
+                    Top Of The Page
+                </a>
+            </div>
+            <template if:true={showArrow}><div onclick={maximizeSidebar} class="expandarrow">&#8677;<span class="tooltiptext">Expand Menu</span></div></template>
+            <div class="main" data-id="main">
+                <c-headline-flow-component></c-headline-flow-component>
+                <c-solution-tile id="solution"></c-solution-tile>
+                <c-sub-solution-tile id="approaches"></c-sub-solution-tile>
+                <c-final-solution-tile id="limitations"></c-final-solution-tile>
+                <c-video-cards id="video"></c-video-cards>
+            </div>
+        </div>
+        
+    </div>
+</template>

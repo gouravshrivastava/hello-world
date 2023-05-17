@@ -1,0 +1,15 @@
+.headerContainer
+{
+    background-image: linear-gradient(rgb(168, 204, 250),rgb(94, 94, 94));
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 5px;
+}
+.heading
+{
+    font-weight: bold;
+    color:white;
+    font-size: 20px;
+}
+/* #032d60 */

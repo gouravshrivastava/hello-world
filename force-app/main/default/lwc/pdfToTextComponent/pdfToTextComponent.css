@@ -1,0 +1,67 @@
+.container
+{
+    background-color: white;
+    border-radius: 5px;
+    padding:10px;
+    min-height:320px;
+    display: flex;
+	flex-direction: column;
+}
+
+.firstScreen
+{
+    text-align: center;
+}
+.progressBar
+{
+    margin-top:auto;
+    font-weight: 500;
+}
+
+.vfPage
+{
+    border: 1px dashed rgb(160, 160, 160);
+    margin-top:10px;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+.table
+{
+    border-collapse: collapse;
+    width: 100%;
+
+}
+
+.table td, .table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table tr:nth-child(even){background-color: #f2f2f2;}
+
+.table tr:hover {background-color: #ddd;}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #235dff;
+    color: white;
+  }
+  .successClass
+  {
+    background-color: rgb(199, 252, 199);
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+  .errorClass
+  {
+    background-color: rgb(255, 205, 205);
+    margin-top: 5px;
+    border-radius: 10px;
+  }
+  .default
+  {
+    background-color: white;
+  }

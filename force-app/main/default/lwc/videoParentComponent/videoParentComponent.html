@@ -1,0 +1,15 @@
+<template>
+
+    
+    <div class="c-container">
+    <c-search-bar-event oninputcarryevent={displayData}></c-search-bar-event>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_2-of-3">
+            <c-video-play videolink={vlink} videotitle={vtitle} class="play"></c-video-play>
+        </div>
+        <div class="slds-col slds-size_1-of-3">
+            <c-video-list onclickevent={handleClick} class="list" ></c-video-list>
+        </div>
+    </div>
+</div>
+</template>

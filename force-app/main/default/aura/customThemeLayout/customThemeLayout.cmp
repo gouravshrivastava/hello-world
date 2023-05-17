@@ -1,0 +1,11 @@
+<aura:component implements="forceCommunity:themeLayout" access="global" description="Custom Theme Layout">
+    <aura:attribute name="themeFooter" type="Aura.Component[]" required="false" />
+	<aura:attribute name="themeHeader" type="Aura.Component[]" required="false" />
+    <aura:attribute name="themeHero" type="Aura.Component[]" required="false" />
+    <aura:attribute name="themeContentHeader" type="Aura.Component[]" required="false" />
+    <div class="newHeader">{!v.themeHeader}</div>
+    <div class="newHero">{!v.themeHero}</div>
+	<div>{!v.themeContentHeader}</div>
+    <div >{!v.body}</div>
+    <div>{!v.themeFooter}</div>
+</aura:component>

@@ -1,0 +1,90 @@
+<template>
+
+    <div class=" container">
+        <template if:true={showLogin}>
+            <div class="slds-grid slds-gutters authenticationContainer">
+
+                <div class="slds-col slds-size_2-of-3">
+
+                    <div class="welcomeContainer">
+                        <div>
+                            <h1 class="welcome">Welcome.</h1><br />
+                            <!-- <h3 class="subtext">Please provide your details.</h3> -->
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="slds-col slds-size_1-of-3 creds">
+
+
+                    <div>
+                        <h1 class="login">Login</h1>
+                        <br />
+                        <input class="slds-input input" type="text" name="username" placeholder="Username"
+                            required></lightning-input>
+                        <br />
+                        <input class="slds-input input" type="password" name="password" placeholder="Password"
+                            required></lightning-input>
+
+                        <button class="button-36" role="button">Login</button>
+
+                        <p style="font-size: 15px;padding-bottom:20px; width:100%;text-align:center;">Or</p>
+
+                        <button class="button-37" role="button" onclick={toggle}>Sign Up</button>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </template>
+
+        <template if:true={showSignup}>
+            <div class="slds-grid slds-gutters authenticationContainer">
+
+                <div class="slds-col slds-size_1-of-3 creds">
+
+
+                    <div>
+                        <h1 class="login">Signup</h1>
+                        <br />
+                        <input class="slds-input input" type="text" name="username" placeholder="Username"
+                            required></lightning-input>
+                        <br />
+                        <input class="slds-input input" type="password" name="password" placeholder="Password"
+                            required></lightning-input>
+
+                        <button class="button-36" role="button" onclick={toggle}>Signup</button>
+
+                        <p style="font-size: 15px;padding-bottom:20px; width:100%;text-align:center;">Or</p>
+
+                        <button class="button-37" role="button" onclick={toggle}>Login</button>
+
+
+                    </div>
+                </div>
+
+                <div class="slds-col slds-size_2-of-3">
+
+                    <div class="welcomeContainer">
+                        <div>
+                            <h1 class="welcome">Welcome.</h1><br />
+                            <!-- <h3 class="subtext">Please provide your details.</h3> -->
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+</template>
+</div>
+
+</template>
